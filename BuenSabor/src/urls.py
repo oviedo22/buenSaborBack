@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from src.usuarios import views
@@ -21,8 +22,11 @@ from src.usuarios import views
 router = DefaultRouter()
 router.register(r'clientes', views.UserViewSet)
 router.register(r'domicilios', views.DomicilioViewSet)
+=======
+from django.urls import path, re_path, include
+>>>>>>> parent of fb059cc (Subida de datos)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    re_path(r'^', include('src.usuarios.url')),
 ]

@@ -1,8 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from rest_framework import permissions
-from rest_framework import viewsets
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import User, Domicilio
@@ -14,6 +12,7 @@ class UserViewSet(viewsets.ModelViewSet):
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
 
+<<<<<<< HEAD
     Additionally we also provide an extra `highlight` action.
     """
     queryset = User.objects.all()
@@ -30,3 +29,8 @@ class DomicilioViewSet(viewsets.ModelViewSet):
     queryset = Domicilio.objects.all()
     serializer_class = DomicilioSerializer
     #permission_classes = [permissions.IsAuthenticated]
+=======
+    elif request.method == 'DELETE':
+        cliente.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+>>>>>>> parent of fb059cc (Subida de datos)
