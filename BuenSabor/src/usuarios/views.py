@@ -5,7 +5,7 @@ from rest_framework import permissions
 from rest_framework import viewsets
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import User
+from .models import User, Domicilio
 from .serializers import *
 
 
@@ -18,4 +18,15 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    #permission_classes = [permissions.IsAuthenticated]
+
+class DomicilioViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+    queryset = Domicilio.objects.all()
+    serializer_class = DomicilioSerializer
     #permission_classes = [permissions.IsAuthenticated]

@@ -20,6 +20,7 @@ from src.usuarios import views
 
 router = DefaultRouter()
 router.register(r'clientes', views.UserViewSet)
+router.register(r'domicilios', views.DomicilioViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
