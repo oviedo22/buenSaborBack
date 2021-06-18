@@ -14,9 +14,9 @@ class User(AbstractUser):
 
 
 class Domicilio(models.Model):
-    calle = models.CharField("Teléfono", max_length=100)
+    calle = models.CharField("Calle", max_length=100)
     numero = models.IntegerField("Número")
-    localidad = models.CharField("Teléfono", max_length=100)
+    localidad = models.CharField("Localidad", max_length=100)
 
     def __str__(self):
         return self.calle + " " + self.numero
